@@ -1,0 +1,22 @@
+containers:
+  runtime:
+    previewPort: 3000
+    environment: []
+    ports: []
+  db:
+    image: 'mysql:5'
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=wp
+      - MYSQL_USER=wpuser
+      - MYSQL_PASSWORD=wppass123
+    ports: []
+  db-admin:
+    previewPort: 80
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=wpuser
+      - PMA_PASSWORD=wppass123
+    ports: []
+init: 'apt-get install php7.0-mysql; apt-get install mysql-client; mysql -u wpuser -pwppass123 -h db wp < testdb.sql; php -S 0.0.0.0:3000'
