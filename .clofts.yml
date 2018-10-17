@@ -19,4 +19,4 @@ containers:
       - PMA_USER=wpuser
       - PMA_PASSWORD=wppass123
     ports: []
-init: 'apt-get install php7.0-mysql; apt-get install mysql-client; mysql -u wpuser -pwppass123 -h db wp < testdb.sql; php -S 0.0.0.0:3000'
+init: "apt-get install php7.0-mysql; apt-get install mysql-client; mysql -u wpuser -pwppass123 -h db wp < testdb.sql; php -S 0.0.0.0:3000"
