@@ -2,7 +2,7 @@ containers:
   runtime:
     previewPort: 3000
   db:
-    image: "mysql:5"
+    image: mysql:5
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_DATABASE=wp
