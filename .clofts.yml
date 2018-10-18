@@ -15,4 +15,4 @@ containers:
       - PMA_HOST=db
       - PMA_USER=wpuser
       - PMA_PASSWORD=wppass123
-init: "apt-get install -Y php7.0-mysql; apt-get install -Y mysql-client; mysql -u wpuser -pwppass123 -h db wp < testdb.sql; php -S 0.0.0.0:3000"
+init: "apt-get install -y php7.0-mysql; apt-get install -y mysql-client; mysql -u wpuser -pwppass123 -h db wp < testdb.sql; php -S 0.0.0.0:3000"
